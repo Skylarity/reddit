@@ -9,11 +9,19 @@
 
 		<div class="container">
 
+			<div class="header">
+				<h1>Reddit - Data Design</h1>
+			</div>
+
 			<!-- Persona -->
-			<div class="persona">
+			<div class="persona darkBG">
+				<h2 class="title">
+					Persona
+				</h2>
+
 				<div class="personaTop">
 					<div class="picture inline-block">
-						<img class="idPic" src="images/robot.png"/>
+						<img class="idPic" src="images/profilePic.jpg"/>
 					</div>
 					<div class="personalInfo inline-block">
 						<h2 class="textLeft">
@@ -33,10 +41,11 @@
 						<h2>
 							Needs:
 						</h2>
-						<p>
-							In order of preference:
+
+						<p class="small">
+							(In order of preference)
 						</p>
-						<ul>
+						<ul class="listItem noBullets">
 							<li>
 								To share content.
 							</li>
@@ -54,7 +63,7 @@
 						<h2 class="textLeft">
 							Ideal Features:
 						</h2>
-						<ul class="textLeft">
+						<ul class="textLeft listItem noBullets">
 							<li>
 								Ability to share content.
 							</li>
@@ -73,18 +82,15 @@
 						<h2 class="textLeft">
 							Frustrations:
 						</h2>
-						<ul class="textLeft">
+						<ul class="textLeft listItem noBullets">
 							<li>
-								Frustration.
+								Other sites are hard to submit to.
 							</li>
 							<li>
-								Frustration.
+								Other sites have less discussion/toxic discussion.
 							</li>
 							<li>
-								Frustration.
-							</li>
-							<li>
-								Frustration.
+								Other sites don't have a voting system.
 							</li>
 						</ul>
 					</div>
@@ -92,18 +98,15 @@
 						<h2 class="textLeft">
 							Key Attributes:
 						</h2>
-						<ul class="textLeft">
+						<ul class="textLeft listItem noBullets">
 							<li>
-								Attribute.
+								Very tech oriented.
 							</li>
 							<li>
-								Attribute.
+								Confident when using the internet.
 							</li>
 							<li>
-								Attribute.
-							</li>
-							<li>
-								Attribute.
+								Likes to share.
 							</li>
 						</ul>
 					</div>
@@ -111,52 +114,66 @@
 			</div>
 
 			<!-- Use Cases -->
-			<div class="useCases">
-				<ul>
+			<div class="useCases darkBG">
+				<h2 class="title">
+					Use Cases
+				</h2>
+				<ul class="noBullets">
 					<li>
-						<h2>Creating an account:</h2>
+						<h3>Creating an account:</h3>
 
-						<p>
-							A user creates an account by accessing the site, clicking "sign in or create account", entering
-							their info in the "create a new account" section, and clicking "create account".
-						</p>
+						<ul class="textLeft listItem">
+							<li>
+								A user creates an account by accessing the site, clicking "sign in or create account", entering
+								their info in the "create a new account" section, and clicking "create account".
+							</li>
+						</ul>
 					</li>
 					<li>
-						<h2>Logging in:</h2>
+						<h3>Logging in:</h3>
 
-						<p>
-							A user logs in by accessing the site, clicking "sign in or create account", entering their info in
-							the "sign in" section, and clicking "sign in".
-						</p>
+						<ul class="textLeft listItem">
+							<li>
+								A user logs in by accessing the site, clicking "sign in or create account", entering their info
+								in
+								the "sign in" section, and clicking "sign in".
+							</li>
+						</ul>
 					</li>
 					<li>
-						<h2>Posting a submission:</h2>
+						<h3>Posting a submission:</h3>
 
-						<p>
-							A user submits a text post by accessing the site, logging in, clicking "Submit a new text post",
-							writing their submission, and clicking "submit".
-						</p>
+						<ul class="textLeft listItem">
+							<li>
+								A user submits a text post by accessing the site, logging in, clicking "Submit a new text post",
+								writing their submission, and clicking "submit".
+							</li>
 
-						<p>
-							A user submits a link by accessing the site, logging in, clicking "Submit a new link", pasting the
-							link, and clicking "submit".
-						</p>
+							<li>
+								A user submits a link by accessing the site, logging in, clicking "Submit a new link", pasting
+								the
+								link, and clicking "submit".
+							</li>
+						</ul>
 					</li>
 					<li>
-						<h2>Posting a comment:</h2>
+						<h3>Posting a comment:</h3>
 
-						<p>
+						<p class="listItemP">
 							A user posts a comment by accessing the site, logging in, accessing a submission, writing their
 							reply, and clicking "save".
 						</p>
 					</li>
 					<li>
-						<h2>Voting on a post:</h2>
+						<h3>Voting on a post:</h3>
 
-						<p>
-							A user votes on a post by accessing the site, logging in, and pressing the up or down arrow next to
-							a submission.
-						</p>
+						<ul class="textLeft listItem">
+							<li>
+								A user votes on a post by accessing the site, logging in, and pressing the up or down arrow next
+								to
+								a submission.
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>
