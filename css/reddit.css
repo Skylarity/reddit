@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	font-family: Verdana, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #00F;
+}
+a:visited {
+	color: #70A;
+}
+
+.wrapper {
+	background: #FFFFFF;
+}
+
+.submission {
+	
+}
+
+.title {
+	font-size: 12pt;
+}
+
+.rank {
+	padding: 0 10px 0 10px;
+
+	color: #888;
+
+	width: 30px;
+
+	text-align: center;
+}
+
+.vote {
+	padding: 0 10px 0 10px;
+
+	color: #888;
+	font-size: 8pt;
+	text-align: center;
+
+	width: 30px;
+}
+
+.thumb {
+	padding: 0 10px 0 10px;
+
+	width: 50px;
+}
+
+.info {
+	color: #888;
+}
+
+.submittedBy {
+	color: #888888;
+	font-size: 8pt;
+}
+
+.postControls {
+	color: #888888;
+	font-size: 8pt;
+}
+
+.blueLink {
+	color: #0000FF;
+}
+
+.grayLink {
+	color: #888888;
+}

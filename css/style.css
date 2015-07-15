@@ -1,0 +1,82 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.textLeft {
+	text-align: left;
+}
+
+/* Persona */
+.persona {
+	margin: auto;
+	width: 90%;
+}
+
+.personaTop {
+	border-bottom: 4px dashed #444;
+}
+
+.personaBot {
+
+}
+
+/* Picture */
+.picture {
+	margin: auto;
+	width: 33%;
+}
+
+.idPic {
+	width: 200px;
+	height: 200px;
+}
+
+/* Personal Info */
+.personalInfo {
+	margin: auto;
+	width: 33%;
+
+	text-align: center;
+}
+
+.quote {
+
+}
+
+.bio {
+
+}
+
+/* Needs */
+.needs {
+	margin: auto;
+	width: 33%;
+}
+
+/* Ideal Features */
+
+.idealFeatures {
+	margin: auto;
+	width: 33%;
+}
+
+/* Frustrations */
+
+.frustrations {
+	margin: auto;
+	width: 33%;
+
+	text-align: center;
+}
+
+/* Key Attributes */
+
+.keyAttributes {
+	margin: auto;
+	width: 33%;
+}
