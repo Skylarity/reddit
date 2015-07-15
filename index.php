@@ -21,7 +21,7 @@
 						</h2>
 
 						<p class="quote textLeft">
-							"Just leave me alone so I can finish coding this, okay?"
+							"I want to talk about all the cool stuff going on in the world!"
 						</p>
 
 						<p class="bio textLeft">
@@ -30,32 +30,48 @@
 						</p>
 					</div>
 					<div class="needs inline-block">
-						Needs
+						<h2>
+							Needs:
+						</h2>
+						<p>
+							In order of preference:
+						</p>
+						<ul>
+							<li>
+								To share content.
+							</li>
+							<li>
+								To talk about said content.
+							</li>
+							<li>
+								To vote on content.
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="personaBot">
 					<div class="idealFeatures inline-block">
 						<h2 class="textLeft">
-							Ideal Features
+							Ideal Features:
 						</h2>
 						<ul class="textLeft">
 							<li>
-								Ideal feature.
+								Ability to share content.
 							</li>
 							<li>
-								Ideal feature.
+								Ability to converse with other users about said content.
 							</li>
 							<li>
-								Ideal feature.
+								Ability to save content for later viewing.
 							</li>
 							<li>
-								Ideal feature.
+								Ability to vote on content to shape the site to his preferences.
 							</li>
 						</ul>
 					</div>
 					<div class="frustrations inline-block">
 						<h2 class="textLeft">
-							Frustrations
+							Frustrations:
 						</h2>
 						<ul class="textLeft">
 							<li>
@@ -74,7 +90,7 @@
 					</div>
 					<div class="keyAttributes inline-block">
 						<h2 class="textLeft">
-							Key Attributes
+							Key Attributes:
 						</h2>
 						<ul class="textLeft">
 							<li>
