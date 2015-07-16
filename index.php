@@ -20,10 +20,10 @@
 				</h2>
 
 				<div class="personaTop">
-					<div class="picture inline-block">
+					<div class="picture inlineBlock">
 						<img class="idPic" src="images/profilePic.jpg"/>
 					</div>
-					<div class="personalInfo inline-block">
+					<div class="personalInfo inlineBlock">
 						<h2 class="textLeft">
 							Dave Keyes
 						</h2>
@@ -37,7 +37,7 @@
 							frequents sites like reddit for tech news, tips, and tricks.
 						</p>
 					</div>
-					<div class="needs inline-block">
+					<div class="needs inlineBlock">
 						<h2>
 							Needs:
 						</h2>
@@ -59,7 +59,7 @@
 					</div>
 				</div>
 				<div class="personaBot">
-					<div class="idealFeatures inline-block">
+					<div class="idealFeatures inlineBlock">
 						<h2 class="textLeft">
 							Ideal Features:
 						</h2>
@@ -78,7 +78,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="frustrations inline-block">
+					<div class="frustrations inlineBlock">
 						<h2 class="textLeft">
 							Frustrations:
 						</h2>
@@ -94,7 +94,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="keyAttributes inline-block">
+					<div class="keyAttributes inlineBlock">
 						<h2 class="textLeft">
 							Key Attributes:
 						</h2>
