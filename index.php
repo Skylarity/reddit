@@ -159,10 +159,12 @@
 					<li>
 						<h3>Posting a comment:</h3>
 
-						<p class="listItemP">
-							A user posts a comment by accessing the site, logging in, accessing a submission, writing their
-							reply, and clicking "save".
-						</p>
+						<ul class="textLeft listItem">
+							<li>
+								A user posts a comment by accessing the site, logging in, accessing a submission, writing their
+								reply, and clicking "save".
+							</li>
+						</ul>
 					</li>
 					<li>
 						<h3>Voting on a post:</h3>

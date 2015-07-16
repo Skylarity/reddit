@@ -10,6 +10,7 @@
 html {
 	height: 100vh;
 }
+
 body {
 	min-height: 100%;
 }
@@ -19,7 +20,7 @@ body {
 	margin: 0 0 20px 0;
 	padding: 20px;
 
-	background: rgba(0,0,0,0.8);
+	background: rgba(0, 0, 0, 0.8);
 }
 
 /* Container */
@@ -36,23 +37,28 @@ body {
 	list-style-type: none;
 }
 
-.listItem li, .listItemP {
+.listItem li {
 	margin: 0 5px 0 5px;
 	padding: 5px;
 
 	color: #FFFFFF;
 	font-weight: bold;
 
-	list-style-type: square;
+	list-style-type: none;
 }
 
-.listItem, .listItemP {
+.listItem li::before {
+	content: "\2023\0020";
+	color: #FFFFFF;
+}
+
+.listItem {
 	margin: 10px;
 }
 
 .darkBG {
 	padding: 20px;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0, 0, 0, 0.8);
 	border-radius: 4px;
 }
 
