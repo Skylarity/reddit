@@ -10,7 +10,10 @@
 		<div class="container">
 
 			<div class="header">
-				<h1>Reddit - Data Design</h1>
+				<h1>
+					Reddit - Data Design
+				</h1>
+				<img class="redditLogo" src="images/reddit-alien.svg" alt="reddit"/>
 			</div>
 
 			<!-- Persona -->
@@ -234,6 +237,267 @@
 						</ol>
 					</li>
 				</ul>
+			</div>
+
+			<!-- -->
+			<div class="erd darkBG">
+
+				<h2 class="title">
+					ERD
+				</h2>
+
+				<img src="images/reddit_erd.svg" alt="Reddit ERD"/>
+
+			</div>
+
+			<!-- MySQL -->
+			<div class="sql darkBG">
+
+				<h2 class="title">
+					MySQL
+				</h2>
+
+				<!-- HTML generated using hilite.me -->
+				<div
+					style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+					<table>
+						<tr>
+							<td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+							</td>
+							<td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">DROP</span> <span
+										style="color: #66d9ef">TABLE</span> <span style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span style="color: #f8f8f2">profile;</span>
+<span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
+										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">submission;</span>
+<span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
+										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">comment;</span>
+<span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
+										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">votedSubmission;</span>
+<span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
+										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">votedComment;</span>
+<span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
+										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">savedSubmission;</span>
+<span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
+										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">savedComment;</span>
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">profile</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">AUTO_INCREMENT</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">username</span>  <span style="color: #66d9ef">VARCHAR</span><span
+										style="color: #f8f8f2">(</span><span style="color: #ae81ff">64</span><span
+										style="color: #f8f8f2">)</span>                 <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #66d9ef">UNIQUE</span> <span style="color: #f8f8f2">(username),</span>
+	<span style="color: #66d9ef">PRIMARY</span> <span style="color: #66d9ef">KEY</span> <span style="color: #f8f8f2">(profileId)</span>
+<span style="color: #f8f8f2">);</span>
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">submission</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">submissionId</span> <span style="color: #66d9ef">INT</span> <span
+										style="color: #66d9ef">UNSIGNED</span> <span style="color: #66d9ef">AUTO_INCREMENT</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">score</span> <span style="color: #66d9ef">INT</span> <span
+										style="color: #f8f8f2">SIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">submissionContent</span> <span style="color: #66d9ef">VARCHAR</span><span
+										style="color: #f8f8f2">(</span><span style="color: #ae81ff">4096</span><span
+										style="color: #f8f8f2">)</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">submissionDate</span> <span style="color: #66d9ef">DATETIME</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #66d9ef">INDEX</span><span style="color: #f8f8f2">(submissionId),</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #f8f8f2">(profileId),</span>
+	<span style="color: #66d9ef">PRIMARY</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(submissionId)</span>
+<span style="color: #f8f8f2">);</span>
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">comment</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">commentId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">AUTO_INCREMENT</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">score</span> <span style="color: #66d9ef">INT</span> <span
+										style="color: #f8f8f2">SIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">commentContent</span> <span style="color: #66d9ef">VARCHAR</span><span
+										style="color: #f8f8f2">(</span><span style="color: #ae81ff">4096</span><span
+										style="color: #f8f8f2">)</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">commentDate</span> <span style="color: #66d9ef">DATETIME</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #66d9ef">INDEX</span><span style="color: #f8f8f2">(commentId),</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #f8f8f2">(profileId),</span>
+	<span style="color: #66d9ef">PRIMARY</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(commentId)</span>
+<span style="color: #f8f8f2">);</span>
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">votedSubmission</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">submissionId</span> <span style="color: #66d9ef">INT</span> <span
+										style="color: #66d9ef">UNSIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">voteType</span> <span style="color: #f8f8f2">BOOLEAN,</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #f8f8f2">(profileId),</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(submissionId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">submission</span><span style="color: #f8f8f2">(submissionId)</span>
+<span style="color: #f8f8f2">);</span>
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">votedComment</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">commentId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">voteType</span> <span style="color: #f8f8f2">BOOLEAN,</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #f8f8f2">(profileId),</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(commentId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">submission</span><span style="color: #f8f8f2">(commentId)</span>
+<span style="color: #f8f8f2">);</span>
+
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">savedSubmission</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">submissionId</span> <span style="color: #66d9ef">INT</span> <span
+										style="color: #66d9ef">UNSIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">saveDate</span> <span style="color: #66d9ef">DATETIME</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #f8f8f2">(profileId),</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(submissionId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">submission</span><span style="color: #f8f8f2">(submissionId)</span>
+<span style="color: #f8f8f2">);</span>
+
+<span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">savedComment</span> <span
+										style="color: #f8f8f2">(</span>
+	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">commentId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #f8f8f2">saveDate</span> <span style="color: #66d9ef">DATETIME</span> <span
+										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
+										style="color: #f8f8f2">,</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #f8f8f2">(profileId),</span>
+	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(commentId)</span> <span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">submission</span><span style="color: #f8f8f2">(commentId)</span>
+<span style="color: #f8f8f2">);</span>
+</pre>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
 			</div>
 
 		</div>

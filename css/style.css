@@ -23,9 +23,24 @@ em {
 /* Header */
 .header {
 	margin: 0 0 20px 0;
-	padding: 20px;
+	padding: 0;
 
 	background: rgba(0, 0, 0, 0.8);
+
+	display: flex;
+}
+
+h1 {
+	padding: 30px 0 0 30px;
+
+	flex-grow: 1;
+}
+
+.redditLogo {
+	padding: 10px;
+
+	width: auto;
+	height: 75px;
 }
 
 /* Container */
@@ -34,8 +49,13 @@ em {
 	padding: 0 0 20px 0;
 	height: 100%;
 
-	background-image: url(../images/bg.jpg);
-	background-size: cover;
+	background: repeating-linear-gradient(
+		45deg,
+		#5CB85C,
+		#5CB85C 60px,
+		#69D169 60px,
+		#69D169 120px
+	);
 }
 
 .noBullets {
@@ -98,6 +118,8 @@ em {
 
 .title {
 	margin: 10px 0 20px 0;
+
+	border-bottom: 4px solid #FFFFFF;
 }
 
 /* Persona */
@@ -180,7 +202,37 @@ em {
 /* Use Cases */
 
 .useCases {
+	margin: auto auto 50px auto;
+	width: 90%;
+	max-width: 1000px;
+}
+
+/* ERD */
+.erd {
+	margin: auto auto 50px auto;
+	width: 90%;
+	max-width: 1000px;
+}
+
+.erd img {
 	margin: auto;
+
+	display: block;
+
+	width: auto;
+	height:600px;
+
+	text-align: center;
+
+	background: #FFFFFF;
+
+	border-radius: 4px;
+}
+
+/* MySQL */
+
+.sql {
+	margin: auto auto 50px auto;
 	width: 90%;
 	max-width: 1000px;
 }
