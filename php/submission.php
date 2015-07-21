@@ -52,7 +52,15 @@ class Submission {
 	 * @param int $submissionContent Content of the submission
 	 */
 	public function __construct($submissionId, $profileId, $submissionContent) {
-		// TODO
+		try {
+			$this->setSubmissionId($submissionId);
+			$this->setProfileId($profileId);
+			$this->setSubmissionContent($submissionContent);
+		} catch(InvalidArgumentException $invalidArgument) {
+			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(RangeException $range) {
+			throw(new RangeException($range->getMessage(), 0, $range));
+		}
 	}
 
 	/**
@@ -92,6 +100,15 @@ class Submission {
 	 */
 	public function getProfileId() {
 		return $this->profileId;
+	}
+
+	/**
+	 * Mutator for profile ID
+	 *
+	 * @param int $newProfileId
+	 */
+	public function setProfileId($newProfileId) {
+		$this->profileId = $newProfileId;
 	}
 
 	/**

@@ -20,9 +20,9 @@ class Autoloader {
 	 * @param string $class_name name of class to load
 	 * @throws Exception unable to load class
 	 */
-	public function classLoader($class_name) {
+	private function classLoader($class_name) {
 		if(file_exists($class_name . ".php")) {
-			include_once($class_name . '.php');
+			include_once($class_name . ".php");
 		} else {
 			throw(new Exception("Unable to load class \"$class_name\""));
 		}
