@@ -17,10 +17,10 @@ class Autoloader {
 	/**
 	 * This function autoloads classes if they exist
 	 *
-	 * @param $class_name name of class to load
+	 * @param string $class_name name of class to load
 	 * @throws Exception unable to load class
 	 */
-	function classLoader($class_name) {
+	public function classLoader($class_name) {
 		if(file_exists($class_name . ".php")) {
 			include_once($class_name . '.php');
 		} else {
