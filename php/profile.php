@@ -31,6 +31,9 @@ class Profile {
 	 * @param int $profileId ID of the profile
 	 * @param string $username Username of the profile
 	 * @param string $hash Hash of the profile
+	 * @throws InvalidArgumentException If the data is invalid
+	 * @throws RangeException If the data is out of bounds
+	 * @throws Exception For all other cases
 	 */
 	public function __construct($profileId, $username, $hash) {
 		try {
@@ -43,6 +46,8 @@ class Profile {
 		} catch(RangeException $range) {
 			// Rethrow exception to the caller
 			throw(new RangeException($range->getMessage(), 0, $range));
+		} catch(Exception $e) {
+			throw(new Exception($e->getMessage(), 0, $e));
 		}
 	}
 

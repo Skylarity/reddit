@@ -52,6 +52,7 @@ class Submission {
 	 * @param int $submissionContent Content of the submission
 	 * @throws InvalidArgumentException If data types are invalid
 	 * @throws RangeException If data is out of bounds
+	 * @throws Exception For all other cases
 	 */
 	public function __construct($submissionId, $profileId, $submissionContent) {
 		try {
@@ -64,6 +65,8 @@ class Submission {
 		} catch(RangeException $range) {
 			// Rethrow the exception to the caller
 			throw(new RangeException($range->getMessage(), 0, $range));
+		} catch(Exception $e) {
+			throw(new Exception($e->getMessage(), 0, $e));
 		}
 	}
 
