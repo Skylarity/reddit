@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Submission model for a reddit user.
+ * Submission model for a reddit user
  *
  * @author Skyler Rexroad
  */

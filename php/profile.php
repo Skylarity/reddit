@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Profile class for a reddit user.
+ * Profile class for a reddit user
  *
  * @author Skyler Rexroad
  */
