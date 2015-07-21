@@ -8,7 +8,7 @@
 class Profile {
 
 	/**
-	 * Id for the profile; this is the primary key
+	 * ID for the profile; this is the primary key
 	 * @var int $profileId
 	 */
 	private $profileId;
@@ -26,7 +26,7 @@ class Profile {
 	private $passwordHash;
 
 	/**
-	 * Constructor for the profile
+	 * Constructor for a profile
 	 *
 	 * @param int $profileId ID of the profile
 	 * @param string $username Username of the profile
