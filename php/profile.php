@@ -63,9 +63,15 @@ class Profile {
 	/**
 	 * Mutator for profile ID
 	 *
-	 * @param int $newProfileId ID of the profile
+	 * @param mixed $newProfileId ID of the profile
 	 */
 	public function setProfileId($newProfileId) {
+		// Base case: If the profile ID is null, this is a new profile without a MySQL assigned ID
+		if($newProfileId === null) {
+			$this->profileId = null;
+			return;
+		}
+
 		// Verify the new profile ID
 		$newProfileId = filter_var($newProfileId, FILTER_VALIDATE_INT);
 		if($newProfileId === false) {
@@ -141,6 +147,31 @@ class Profile {
 
 		// Store the new hash
 		$this->passwordHash = $newPasswordHash;
+	}
+
+	/**
+	 * Inserts this profile into MySQL
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @throws PDOException when MySQL related errors occur
+	 */
+	public function insert(PDO &$pdo) {
+
+		// Make sure this is a new profile
+		if($this->profileId !== null) {
+			throw(new PDOException("Not a new profile"));
+		}
+
+		// Create query template
+		$query = "INSERT INTO profile(username, passwordHash) VALUES(:username, :passwordHash)";
+		$statement = $pdo->prepare($query);
+
+		// Bind the member variables to the placeholders in the templates
+		$parameters = array("username" => $this->username, "passwordHash" => $this->passwordHash);
+		$statement->execute($parameters);
+
+		// Update the null profile ID with what MySQL has generated
+		$this->setProfileId(intval($pdo->lastInsertId()));
 	}
 
 }

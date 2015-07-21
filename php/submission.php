@@ -82,9 +82,15 @@ class Submission {
 	/**
 	 * Mutator for the submission ID
 	 *
-	 * @param int $newSubmissionId
+	 * @param mixed $newSubmissionId
 	 */
 	public function setSubmissionId($newSubmissionId) {
+		// Base case: If the submission ID is null, this is a new submission without a MySQL assigned ID
+		if($newSubmissionId === null) {
+			$this->submissionId = null;
+			return;
+		}
+
 		// Verify the new submission ID
 		$newSubmissionId = filter_var($newSubmissionId, FILTER_VALIDATE_INT);
 		if($newSubmissionId === false) {
