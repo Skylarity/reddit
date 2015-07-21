@@ -1,3 +1,7 @@
+<?php
+$autoloader = new Autoloader();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>

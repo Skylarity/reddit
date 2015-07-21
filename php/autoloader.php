@@ -22,7 +22,7 @@ class Autoloader {
 	 */
 	private function classLoader($className) {
 		if(file_exists($className . ".php")) {
-			include_once($className . ".php");
+			include_once(__DIR__ . "/" . $className . ".php");
 		} else {
 			throw(new Exception("Unable to load class \"$className\""));
 		}
