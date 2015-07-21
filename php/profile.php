@@ -21,9 +21,9 @@ class Profile {
 
 	/**
 	 * Has for the profile
-	 * @var string $hash
+	 * @var string $passwordHash
 	 */
-	private $hash;
+	private $passwordHash;
 
 	/**
 	 * Constructor for the profile
@@ -36,7 +36,7 @@ class Profile {
 		try {
 			$this->setProfileId($profileId);
 			$this->setUsername($username);
-			$this->setHash($hash);
+			$this->setPasswordHash($hash);
 		} catch(InvalidArgumentException $invalidArgument) {
 			// Rethrow exception to the caller
 			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
@@ -112,30 +112,30 @@ class Profile {
 	 *
 	 * @return string value of hash
 	 */
-	public function getHash() {
-		return $this->hash;
+	public function getPasswordHash() {
+		return $this->passwordHash;
 	}
 
 	/**
 	 * Mutator for the hash
 	 *
-	 * @param string $newHash hash of the profile
+	 * @param string $newPasswordHash hash of the profile
 	 */
-	public function setHash($newHash) {
+	public function setPasswordHash($newPasswordHash) {
 		// Verify the hash is secure
-		$newHash = trim($newHash);
-		$newHash = filter_var($newHash, FILTER_SANITIZE_STRING);
-		if(empty($newHash) === true) {
+		$newPasswordHash = trim($newPasswordHash);
+		$newPasswordHash = filter_var($newPasswordHash, FILTER_SANITIZE_STRING);
+		if(empty($newPasswordHash) === true) {
 			throw(new InvalidArgumentException("Hash is empty or insecure"));
 		}
 
 		// Verify the hash will fit in the database
-		if(strlen($newHash) > 64) {
+		if(strlen($newPasswordHash) > 64) {
 			throw(new RangeException("Hash too large"));
 		}
 
-		// Store the new username
-		$this->username = $newHash;
+		// Store the new hash
+		$this->passwordHash = $newPasswordHash;
 	}
 
 }
