@@ -59,8 +59,10 @@ class Submission {
 			$this->setProfileId($profileId);
 			$this->setSubmissionContent($submissionContent);
 		} catch(InvalidArgumentException $invalidArgument) {
+			// Rethrow the exception to the caller
 			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
 		} catch(RangeException $range) {
+			// Rethrow the exception to the caller
 			throw(new RangeException($range->getMessage(), 0, $range));
 		}
 	}
