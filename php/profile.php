@@ -34,7 +34,17 @@ class Profile {
 	 */
 
 	public function __construct($profileId, $username, $hash) {
-		// TODO
+		try {
+			$this->setProfileId($profileId);
+			$this->setUsername($username);
+			$this->setHash($hash);
+		} catch(InvalidArgumentException $invalidArgument) {
+			// Rethrow exception to the caller
+			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		} catch(RangeException $range) {
+			// Rethrow exception to the caller
+			throw(new RangeException($range->getMessage(), 0, $range));
+		}
 	}
 
 	/**
