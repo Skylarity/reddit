@@ -50,6 +50,8 @@ class Submission {
 	 * @param int $submissionId ID of the submission
 	 * @param int $profileId ID of the submitter
 	 * @param int $submissionContent Content of the submission
+	 * @throws InvalidArgumentException
+	 * @throws RangeException
 	 */
 	public function __construct($submissionId, $profileId, $submissionContent) {
 		try {
