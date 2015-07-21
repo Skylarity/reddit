@@ -32,7 +32,6 @@ class Profile {
 	 * @param string $username Username of the profile
 	 * @param string $hash Hash of the profile
 	 */
-
 	public function __construct($profileId, $username, $hash) {
 		try {
 			$this->setProfileId($profileId);
