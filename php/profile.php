@@ -262,7 +262,7 @@ class Profile {
 	 *
 	 * @param PDO $pdo pointer to PDO connection, by reference
 	 * @param $username username to search for
-	 * @return SplFixedArray of Profiles found or null if not found
+	 * @return SplFixedArray of Profiles found
 	 * @throws PDOException when MySQL related errors occur
 	 */
 	public function getProfileByUsername(PDO &$pdo, $username) {
@@ -296,22 +296,14 @@ class Profile {
 			}
 		}
 
-		// Count the results in the array and return
-		// 1) null if 0 results
-		// 2) the entire array if >= 1 result
-		$numberOfProfiles = count($profiles);
-		if($numberOfProfiles === 0) {
-			return (0);
-		} else {
-			return ($profiles);
-		}
+		return ($profiles);
 	}
 
 	/**
 	 * Gets all profiles
 	 *
 	 * @param PDO $pdo pointer to PDO connection, by reference
-	 * @return SplFixedArray of Profiles found or null if not found
+	 * @return SplFixedArray of Profiles found
 	 * @throws PDOException when MySQL related errors occur
 	 */
 	public static function getAllProfiles(PDO &$pdo) {
@@ -334,15 +326,7 @@ class Profile {
 			}
 		}
 
-		// Count the results in the array and return
-		// 1) null if 0 results
-		// 2) the entire array if >= 1 result
-		$numberOfProfiles = count($profiles);
-		if($numberOfProfiles === 0) {
-			return (0);
-		} else {
-			return ($profiles);
-		}
+		return ($profiles);
 	}
 
 }
