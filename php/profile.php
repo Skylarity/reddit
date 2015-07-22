@@ -156,7 +156,6 @@ class Profile {
 	 * @throws PDOException when MySQL related errors occur
 	 */
 	public function insert(PDO &$pdo) {
-
 		// Make sure this is a new profile
 		if($this->profileId !== null) {
 			throw(new PDOException("Not a new profile"));
@@ -167,11 +166,31 @@ class Profile {
 		$statement = $pdo->prepare($query);
 
 		// Bind the member variables to the placeholders in the templates
-		$parameters = array("username" => $this->username, "passwordHash" => $this->passwordHash);
+		$parameters = array("username" => $this->getUsername(), "passwordHash" => $this->getPasswordHash());
 		$statement->execute($parameters);
 
 		// Update the null profile ID with what MySQL has generated
 		$this->setProfileId(intval($pdo->lastInsertId()));
+	}
+
+	/**
+	 * Deletes this profile from MySQL
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 */
+	public function delete(PDO &$pdo) {
+		// Make sure this profile already exists
+		if($this->profileId === null) {
+			throw(new PDOException("Unable to delete a profile that does not exist"));
+		}
+
+		// Create query template
+		$query = "DELETE FROM profile WHERE profileId = :profileId";
+		$statement = $pdo->prepare($query);
+
+		// Bind the member variables to the placeholders in the templates
+		$parameters = array("profileId" => $this->getProfileId());
+		$statement->execute($parameters);
 	}
 
 }
