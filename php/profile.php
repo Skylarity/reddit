@@ -226,7 +226,7 @@ class Profile {
 	public function getProfileById(PDO &$pdo, $profileId) {
 		// Sanitize the ID before searching
 		$profileId = filter_var($profileId, FILTER_SANITIZE_INT);
-		if ($profileId === false) {
+		if($profileId === false) {
 			throw(new PDOException("Profile ID is not an integer"));
 		}
 		if($profileId <= 0) {
@@ -254,7 +254,7 @@ class Profile {
 			throw(new PDOException($e->getMessage(), 0, $e));
 		}
 
-		return($profile);
+		return ($profile);
 	}
 
 	/**
@@ -269,7 +269,7 @@ class Profile {
 		// Sanitize the username before searching
 		$username = trim($username);
 		$username = filter_var($username, FILTER_SANITIZE_STRING);
-		if (empty($username) === true) {
+		if(empty($username) === true) {
 			throw(new PDOException("Username is invalid"));
 		}
 
@@ -300,10 +300,10 @@ class Profile {
 		// 1) null if 0 results
 		// 2) the entire array if >= 1 result
 		$numberOfProfiles = count($profiles);
-		if ($numberOfProfiles === 0) {
-			return(0);
+		if($numberOfProfiles === 0) {
+			return (0);
 		} else {
-			return($profiles);
+			return ($profiles);
 		}
 	}
 
@@ -338,10 +338,10 @@ class Profile {
 		// 1) null if 0 results
 		// 2) the entire array if >= 1 result
 		$numberOfProfiles = count($profiles);
-		if ($numberOfProfiles === 0) {
-			return(0);
+		if($numberOfProfiles === 0) {
+			return (0);
 		} else {
-			return($profiles);
+			return ($profiles);
 		}
 	}
 

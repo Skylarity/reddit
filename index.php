@@ -40,7 +40,8 @@ $autoloader = new Autoloader();
 						</p>
 
 						<p class="bio textLeft">
-							Dave is a programmer at heart, and also at his job. He works for a web development company, and
+							Dave is a programmer at heart, and also at his job. He works for a web development company,
+							and
 							frequents sites like reddit for tech news, tips, and tricks.
 						</p>
 					</div>
@@ -338,30 +339,38 @@ $autoloader = new Autoloader();
 							</td>
 							<td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">DROP</span> <span
 										style="color: #66d9ef">TABLE</span> <span style="color: #66d9ef">IF</span> <span
-										style="color: #66d9ef">EXISTS</span> <span style="color: #f8f8f2">savedComment;</span>
+										style="color: #66d9ef">EXISTS</span> <span
+										style="color: #f8f8f2">savedComment;</span>
 <span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
-										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span
 										style="color: #f8f8f2">savedSubmission;</span>
 <span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
-										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span
 										style="color: #f8f8f2">votedComment;</span>
 <span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
-										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span
 										style="color: #f8f8f2">votedSubmission;</span>
 <span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
-										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span
 										style="color: #f8f8f2">comment;</span>
 <span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
-										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span
 										style="color: #f8f8f2">submission;</span>
 <span style="color: #66d9ef">DROP</span> <span style="color: #66d9ef">TABLE</span> <span
-										style="color: #66d9ef">IF</span> <span style="color: #66d9ef">EXISTS</span> <span
+										style="color: #66d9ef">IF</span> <span
+										style="color: #66d9ef">EXISTS</span> <span
 										style="color: #f8f8f2">profile;</span>
 
 <span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">profile</span> <span
 										style="color: #f8f8f2">(</span>
 	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
-										style="color: #66d9ef">AUTO_INCREMENT</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">AUTO_INCREMENT</span> <span
+										style="color: #66d9ef">NOT</span> <span
 										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">username</span>  <span style="color: #66d9ef">VARCHAR</span><span
 										style="color: #f8f8f2">(</span><span style="color: #ae81ff">64</span><span
@@ -382,7 +391,8 @@ $autoloader = new Autoloader();
 										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
 										style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">score</span> <span style="color: #66d9ef">INT</span> <span
-										style="color: #f8f8f2">SIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #f8f8f2">SIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span
 										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">submissionContent</span> <span style="color: #66d9ef">VARCHAR</span><span
 										style="color: #f8f8f2">(</span><span style="color: #ae81ff">65535</span><span
@@ -393,7 +403,8 @@ $autoloader = new Autoloader();
 										style="color: #f8f8f2">,</span>
 	<span style="color: #66d9ef">INDEX</span><span style="color: #f8f8f2">(submissionId),</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
-										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">profile</span><span
 										style="color: #f8f8f2">(profileId),</span>
 	<span style="color: #66d9ef">PRIMARY</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(submissionId)</span>
 <span style="color: #f8f8f2">);</span>
@@ -401,13 +412,15 @@ $autoloader = new Autoloader();
 <span style="color: #66d9ef">CREATE</span> <span style="color: #66d9ef">TABLE</span> <span style="color: #a6e22e">comment</span> <span
 										style="color: #f8f8f2">(</span>
 	<span style="color: #f8f8f2">commentId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
-										style="color: #66d9ef">AUTO_INCREMENT</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">AUTO_INCREMENT</span> <span
+										style="color: #66d9ef">NOT</span> <span
 										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">profileId</span> <span style="color: #66d9ef">INT</span> <span style="color: #66d9ef">UNSIGNED</span> <span
 										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
 										style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">score</span> <span style="color: #66d9ef">INT</span> <span
-										style="color: #f8f8f2">SIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #f8f8f2">SIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span
 										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">commentContent</span> <span style="color: #66d9ef">VARCHAR</span><span
 										style="color: #f8f8f2">(</span><span style="color: #ae81ff">65535</span><span
@@ -418,7 +431,8 @@ $autoloader = new Autoloader();
 										style="color: #f8f8f2">,</span>
 	<span style="color: #66d9ef">INDEX</span><span style="color: #f8f8f2">(commentId),</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
-										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">profile</span><span
 										style="color: #f8f8f2">(profileId),</span>
 	<span style="color: #66d9ef">PRIMARY</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(commentId)</span>
 <span style="color: #f8f8f2">);</span>
@@ -429,11 +443,13 @@ $autoloader = new Autoloader();
 										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
 										style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">submissionId</span> <span style="color: #66d9ef">INT</span> <span
-										style="color: #66d9ef">UNSIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span
 										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">voteType</span> <span style="color: #f8f8f2">BOOLEAN,</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
-										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">profile</span><span
 										style="color: #f8f8f2">(profileId),</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(submissionId)</span> <span
 										style="color: #66d9ef">REFERENCES</span> <span
@@ -450,11 +466,13 @@ $autoloader = new Autoloader();
 										style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">voteType</span> <span style="color: #f8f8f2">BOOLEAN,</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
-										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">profile</span><span
 										style="color: #f8f8f2">(profileId),</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(commentId)</span> <span
 										style="color: #66d9ef">REFERENCES</span> <span
-										style="color: #a6e22e">submission</span><span style="color: #f8f8f2">(commentId)</span>
+										style="color: #a6e22e">submission</span><span
+										style="color: #f8f8f2">(commentId)</span>
 <span style="color: #f8f8f2">);</span>
 
 
@@ -464,13 +482,15 @@ $autoloader = new Autoloader();
 										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
 										style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">submissionId</span> <span style="color: #66d9ef">INT</span> <span
-										style="color: #66d9ef">UNSIGNED</span> <span style="color: #66d9ef">NOT</span> <span
+										style="color: #66d9ef">UNSIGNED</span> <span
+										style="color: #66d9ef">NOT</span> <span
 										style="color: #66d9ef">NULL</span><span style="color: #f8f8f2">,</span>
 	<span style="color: #f8f8f2">saveDate</span> <span style="color: #66d9ef">DATETIME</span> <span
 										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
 										style="color: #f8f8f2">,</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
-										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">profile</span><span
 										style="color: #f8f8f2">(profileId),</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(submissionId)</span> <span
 										style="color: #66d9ef">REFERENCES</span> <span
@@ -489,11 +509,13 @@ $autoloader = new Autoloader();
 										style="color: #66d9ef">NOT</span> <span style="color: #66d9ef">NULL</span><span
 										style="color: #f8f8f2">,</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(profileId)</span> <span
-										style="color: #66d9ef">REFERENCES</span> <span style="color: #a6e22e">profile</span><span
+										style="color: #66d9ef">REFERENCES</span> <span
+										style="color: #a6e22e">profile</span><span
 										style="color: #f8f8f2">(profileId),</span>
 	<span style="color: #66d9ef">FOREIGN</span> <span style="color: #66d9ef">KEY</span><span style="color: #f8f8f2">(commentId)</span> <span
 										style="color: #66d9ef">REFERENCES</span> <span
-										style="color: #a6e22e">submission</span><span style="color: #f8f8f2">(commentId)</span>
+										style="color: #a6e22e">submission</span><span
+										style="color: #f8f8f2">(commentId)</span>
 <span style="color: #f8f8f2">);</span>
 </pre>
 							</td>
