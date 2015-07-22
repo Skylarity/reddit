@@ -1,5 +1,12 @@
 <?php
-$autoloader = new Autoloader();
+try {
+	require_once("php/autoloader.php");
+} catch(Exception $e) {
+	echo $e->getMessage();
+}
+
+$profile = new Profile(1, "Skylarity", "4QAIn8SvaW");
+$submission = new Submission(1, 1, "This is a submission.");
 ?>
 
 <!DOCTYPE html>

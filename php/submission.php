@@ -37,7 +37,7 @@ class Submission {
 	 * Boolean flag to check if the content has been edited
 	 * @var boolean $edited
 	 */
-	private $edited = false;
+	private $edited;
 
 	/**
 	 * Date of the submission
@@ -58,7 +58,10 @@ class Submission {
 		try {
 			$this->setSubmissionId($submissionId);
 			$this->setProfileId($profileId);
+			$this->score = 0;
 			$this->setSubmissionContent($submissionContent);
+			$this->edited = false;
+			$this->submissionDate = new DateTime("now");
 		} catch(InvalidArgumentException $invalidArgument) {
 			// Rethrow the exception to the caller
 			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
