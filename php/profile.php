@@ -223,7 +223,7 @@ class Profile {
 	 * @return mixed Profile found or null if not found
 	 * @throws PDOException when MySQL related errors occur
 	 */
-	public function getProfileById(PDO &$pdo, $profileId) {
+	public static function getProfileById(PDO &$pdo, $profileId) {
 		// Sanitize the ID before searching
 		$profileId = filter_var($profileId, FILTER_SANITIZE_INT);
 		if($profileId === false) {
@@ -265,7 +265,7 @@ class Profile {
 	 * @return SplFixedArray of Profiles found
 	 * @throws PDOException when MySQL related errors occur
 	 */
-	public function getProfileByUsername(PDO &$pdo, $username) {
+	public static function getProfileByUsername(PDO &$pdo, $username) {
 		// Sanitize the username before searching
 		$username = trim($username);
 		$username = filter_var($username, FILTER_SANITIZE_STRING);
