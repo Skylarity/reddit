@@ -52,6 +52,15 @@ class Profile {
 	}
 
 	/**
+	 * toString implementation
+	 *
+	 * @return string representation of profile
+	 */
+	public function __toString() {
+		return "ID: " . $this->getProfileId() . ", Username: " . $this->getUsername() . ", Password Hash: " . $this->getPasswordHash() . "<br/>";
+	}
+
+	/**
 	 * Accessor for profile ID
 	 *
 	 * @return int value of profile ID
