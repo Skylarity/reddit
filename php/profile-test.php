@@ -6,7 +6,7 @@
  */
 
 require_once("/etc/apache2/data-design/encrypted-config.php");
-require_once("profile.php");
+require_once("autoloader.php");
 
 try {
 	$pdo = connectToEncryptedMySQL("/etc/apache2/data-design/srexroad.ini");
@@ -27,3 +27,14 @@ function printProfiles($profiles) {
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/profile-test.css">
+		<title>Data Design Project</title>
+	</head>
+	<body>
+	</body>
+</html>
